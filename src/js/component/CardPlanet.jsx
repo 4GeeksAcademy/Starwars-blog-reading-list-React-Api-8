@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { Context } from '../store/appContext'
 
-const CardPeople = ({ planet }) => {
+const CardPlanet = ({ planet }) => {
     const { store, actions } = useContext(Context)
 
     return (
@@ -14,7 +14,7 @@ const CardPeople = ({ planet }) => {
                 <p>Population: {planet.population}</p>
                 <p>Terrain:{planet.terrain}</p>
                 <div>
-                    <Link to="/cardDetails">
+                    <Link to={`/detailPlanet/${planet.uid}`}>
                         <button className="btn btn-outline-primary">Leran more!</button>
                     </Link>
                     <button className="btn btn-outline-warning"><i class="fa fa-heart-o" aria-hidden="true"></i></button>
@@ -23,4 +23,4 @@ const CardPeople = ({ planet }) => {
         </div>
     )
 }
-export default CardPeople;
+export default CardPlanet;

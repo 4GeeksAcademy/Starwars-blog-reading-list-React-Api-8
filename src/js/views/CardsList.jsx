@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { Context } from "../store/appContext.js";
 import CardPeople from "../component/CardPeople.jsx";
 import CardPlanet from "../component/CardPlanet.jsx";
+import CardVehicle from "../component/CardVehicle.jsx";
 
 const CardsList = () => {
     const { store, actions } = useContext(Context);
@@ -9,7 +10,10 @@ const CardsList = () => {
     useEffect(() => {
         actions.getPeople();
         actions.getPlanets();
-    }, []);
+        actions.getVehicles();
+    }, [actions]);
+
+
 
     return (
         <div className="w-75 mx-auto">
@@ -32,6 +36,17 @@ const CardsList = () => {
                     {store.planets.map((planet, index) => (
                         <div key={index} style={{ width: "200px", margin: "0 10px" }}>
                             <CardPlanet planet={planet} />
+                        </div>
+                    ))}
+                </div>
+            </div>
+            <div>
+                <h2>Vehicles</h2>
+                {/* Contenedor con scroll horizontal */}
+                <div className="d-flex flex-row overflow-auto" style={{ whiteSpace: "nowrap" }}>
+                    {store.vehicles.map((vehicle, index) => (
+                        <div key={index} style={{ width: "200px", margin: "0 10px" }}>
+                            <CardVehicle vehicle={vehicle} />
                         </div>
                     ))}
                 </div>
