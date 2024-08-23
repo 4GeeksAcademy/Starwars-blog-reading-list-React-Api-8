@@ -27,9 +27,9 @@ const Details = () => {
     console.log(store.people);
 
     return (
-        <div>
-            <CardDetailsPeople person={person} />
-        </div>
+
+        <CardDetailsPeople person={person} />
+
     )
 }
 export default Details;

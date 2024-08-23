@@ -7,44 +7,45 @@ const CardDetailsVehicle = ({ vehicle }) => {
     }
 
     return (
-        <div className="detail-card">
-            <div className="first-details">
-                <div>
-                    <img src="https://picsum.photos/400/200" alt="" />
+        <div className="py-3 px-5 w-100">
+            <div className="card p-3" style={{ maxWidth: "540px" }}>
+                <div className="row g-0">
+                    <div className="col-md-4">
+                        <img src={`https://starwars-visualguide.com/assets/img/vehicles/${vehicle.uid}.jpg`} className="img-fluid rounded" alt="Vehicle Image" />
+                    </div>
+                    <div className="col-md-8 ps-5 pe-4">
+                        <div className="card-body p-0">
+                            <h5 className="card-title display-5">{vehicle.properties.name}</h5>
+                            <p className="card-text">{vehicle.description}</p>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <h3>{vehicle.name}</h3>
-                    <p>{vehicle.description}</p>
+                <div className="row pt-2 border-top border-2 border-danger mt-3 text-center">
+                    <div className="col">
+                        <p><b>Name</b></p>
+                        <p>{vehicle.properties.name}</p>
+                    </div>
+                    <div className="col">
+                        <p><b>Model</b></p>
+                        <p>{vehicle.properties.model}</p>
+                    </div>
+                    <div className="col">
+                        <p><b>Vehicle Class</b></p>
+                        <p>{vehicle.properties.vehicle_class}</p>
+                    </div>
+                    <div className="col">
+                        <p><b>Manufacturer</b></p>
+                        <p>{vehicle.properties.manufacturer}</p>
+                    </div>
+                    <div className="col">
+                        <p><b>Passengers</b></p>
+                        <p>{vehicle.properties.passengers}</p>
+                    </div>
+                    <div className="col">
+                        <p><b>Cargo Capacity</b></p>
+                        <p>{vehicle.properties.cargo_capacity}</p>
+                    </div>
                 </div>
-
-                <div className="second-details">
-                    <div>
-                        <h3>Name</h3>
-                        <p>{vehicle.name}</p>
-                    </div>
-                    <div>
-                        <h3>model</h3>
-                        <p>{vehicle.model}</p>
-                    </div>
-                    <div>
-                        <h3>vehicle_class</h3>
-                        <p>{vehicle.vehicle_class}</p>
-                    </div>
-                    <div>
-                        <h3>manufacturer</h3>
-                        <p>{vehicle.manufacturer}</p>
-                    </div>
-                    <div>
-                        <h3>passengers</h3>
-                        <p>{vehicle.passengers}</p>
-                    </div>
-                    <div>
-                        <h3>Cargo_capacity</h3>
-                        <p>{vehicle.cargo_capacity}</p>
-                    </div>
-
-                </div>
-
             </div>
         </div>
     )

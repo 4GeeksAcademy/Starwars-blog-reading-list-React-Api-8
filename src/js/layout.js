@@ -8,6 +8,7 @@ import ScrollToTop from "./component/scrollToTop";
 import CardsList from "./views/CardsList.jsx"
 import Details from "./views/Details.jsx";
 import DetailPlanet from "./views/DetailPlanet.jsx";
+import DetailVehicle from "./views/DetailVehicle.jsx";
 
 // import{CardDetails} from "./views/CardDetails.jsx"
 import injectContext from "./store/appContext";
@@ -31,6 +32,7 @@ const Layout = () => {
 						{/* <Route path="/" element={<Home />} /> */}
 						<Route path="/details/:id" element={<Details />} />
 						<Route path="/detailPlanet/:id" element={<DetailPlanet />} />
+						<Route path="/detailVehicle/:id" element={<DetailVehicle/>} />
 						{/* <Route path="/single/:theid" element={<Single />} /> */}
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
